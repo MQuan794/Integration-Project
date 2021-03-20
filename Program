@@ -1,0 +1,340 @@
+import math
+import random
+
+
+#Mike Quan
+#COP 1500
+#Professor Vanslow
+#Integration Project: Personal Textbook
+#Purpose and project: Re-create a textbook type guide for python for personal use
+
+
+#Function acts as a main menu
+def menu():
+    
+    #Introduction to the program
+    print("Welcome to Mike's Python Textbook, if you are reading this it's because you are one of the few people with access to this personal Python guide.  or you are just Mike and forgot how to do certain things like an idiot.")
+    choice= input("Before we begin you must enter a a specific topic, if you are interested in learning about Numeric operations type 1, to learn about String operations type 2, to learn about loops type 3, to learn about Boolean operators type 4, to exit the program type 5. ")
+    if (choice=="1"):
+        numericOps()
+    elif (choice=="2"):
+        stringOps()
+    elif (choice=="3"):
+        loops()
+    elif (choice =="4"):
+        tandf()
+    elif (choice=="5"):
+        exit()
+    if (choice != "1") or (choice != "2") or (choice != "3") or (choice != "4") or (choice != "5"):
+        print("Please choose 1 or 2 or 3 or 4 or 5")
+        menu()
+        
+#Function allows users to navigate string operations        
+def stringOps():
+    print("String operations allow users to add or multiply words or other strings.")
+    lesson2= input("Please select from the following operations, + or *")
+    if (lesson2== "+"):
+        stringAdd()
+    if (lesson2== "*"):
+        stringMul()
+        
+#Function explains * symbol in terms of strings       
+def stringMul():
+    print("You can use the * symbol with strings to multiple a word x amount of times")
+    wordChoice= str(input("Please type a word"))
+    wordNumber= str(11)
+    print(wordChoice, wordNumber, sep=" * ") #sep= puts a * in between wordChoice and wordNumber
+    wordAnswer2= input("How many times will your word be printed?")
+    if (wordAnswer2=="11"):
+        print("Excellent now you know how to use * in terms of strings.")
+        path10=input("To go back to the String Operations menu type 1, to return to the main menu type 2. ")
+        if (path10=="1"):
+            stringOps()
+        else:
+            (path10=="2")
+            menu()
+    else:
+        print("I'm sorry that is wrong")
+        stringMul()
+
+#Function explains + symbol in terms of string        
+def stringAdd():
+    print("You can use the + symbol with strings to add two words together")
+    word1= str(input("Enter a Word "))
+    word2= str(input("Enter a second Word "))
+    word3= str(word1+word2) # + adds the two words together
+    wordBlank= input("What will the word become after adding the two words together with +")
+    if (wordBlank==word3):
+        print("Excellent now you know how to use + in terms of strings.")
+        path10=input("To go back to the String Operations menu type 1, to return to the main menu type 2. ")
+        if (path10=="1"):
+            stringOps()
+        else:
+            (path10=="2")
+            menu()
+    else:
+        print("I'm sorry that is wrong")
+        stringAdd()        
+
+#Fucntion allows users to navigate operations
+def numericOps():
+    print("Numeric operations are fairly simple, for this topic these are used just like normal everday math signs ")
+    print("Numeric Operations include the following; +,-,*,**,%,/,// ")
+    lesson= input("Please select from the following operations, + - * ** % / // ")
+    if (lesson == "+"):
+        addition()
+    elif (lesson == "-"):
+        subtraction()
+    elif (lesson == "*"):
+        multiply()
+    elif (lesson == "/"):
+        divide()
+    elif (lesson == "**"):
+        exponent()
+    elif (lesson == "//"):
+        floorDivide()
+    elif (lesson == "%"):
+        modulus()
+    else:
+        (lesson != "+") or (lesson != "-") or (lesson != "*") or (lesson != "**") or (lesson != "%") or (lesson != "/") or (lesson != "//")
+        print("Error going back, please select from the list!")
+        numericOps()
+          
+#Function explains the + symbol       
+def addition():
+    print("The + sign is the same as the basic addition symbol, it can be used to add assignments, numbers, strings, etc! ")
+    number=int(input("Before we begin select a number "))
+    answer= int(number + 4) # + adds the number by 4
+    print("For example take your number", number, "and add 4 to it. ")
+    answer2= int(input("What is the answer"))
+    if (answer2==answer):
+        print("Excellent work now you know how to use the +! ")
+        path=input("To go back to the Numeric Operations menu type 1, to return to the main menu type 2. ")
+        if (path=="1"):
+            numericOps()
+        else:
+            (path=="2")
+            menu()
+    else:
+        print("I'm sorry that is wrong")
+        addition()
+
+#Function explains the - symbol            
+def subtraction():
+    print("The - sign is the normal subtraction sign.  It's used to subtract assignments, strings, numbers, etc. ")
+    subNum= int(input("Before we begin please choose a number."))
+    print("Now take that number",subNum, "and subtract it by 2. ")
+    subAnswer= int(subNum - 2)# - subtracts the number by 2
+    subChoice= int(input("What is the answer "))
+    if (subChoice==subAnswer):
+        print("Excellent now you know how to use the - symbol ")
+        path2=input("To go back to the Numeric Operations menu type 1, to return to the main menu type 2 ")
+        if (path2=="1"):
+            numericOps()
+        else:
+            (path2=="2")
+            menu()
+    else:
+        print("I'm sorry that is wrong")
+        subtraction()
+            
+#Function explains the * symbol
+def multiply():
+    print("The * symbol means multiplication it can multiply numbers, strings, assignments, etc. ")
+    mulNum= int(input("Please select a number. "))
+    mulAnswer= int(mulNum * 3) # * multiplies the number by 3
+    print("Now take that number", mulNum, "and * (multiply) it by 3")
+    mulChoice= int(input("What is the answer"))
+    if (mulChoice==mulAnswer):
+        print("Excellent work now you know how to use the * symbol! ")
+        path3=input("To go back to the Numeric Operations menu type 1, to return to the main menu type 2. ")
+        if (path3=="1"):
+            numericOps()
+        else:
+            (path3=="2")
+            menu()
+    else:
+        print("I'm sorry that is wrong")
+        multiply()
+
+#Function explains the / symbol
+def divide():
+    print("The / symbol means division it can divide numbers, strings, assignments, etc. ")
+    divNum= int(input("Please select a number "))
+    divAnswer= int(divNum / 1) #divides the number by 1
+    print("Now take that number", divNum, "and / (divide) it by 1")
+    divChoice= int(input("What is the answer"))
+    if (divChoice==divAnswer):
+        print("Excellent work now you know how to use the / symbol! ")
+        path4=input("To go back to the Numeric Operations menu type 1, to return to the main menu type 2. ")
+        if (path4=="1"):
+            numericOps()
+        else:
+            (path4=="2")
+            menu()
+    else:
+        print("I'm sorry that is wrong")
+        divide()
+
+#Function explains the // symbol
+def floorDivide():
+    print("The // symbol means floor division it will show you how many times a number goes into another number. ")
+    floorNum= int(input("Please select an even number "))
+    floorAnswer= int(floorNum // 2)#floor divides the number by 2 (shows how many times 2 goes into the number
+    print("Now take that number", floorNum, "and // (floor divide) it by 2 (how many times can 2 go into your number. ")
+    floorChoice= int(input("What is the answer"))
+    if (floorChoice==floorAnswer):
+        print("Excellent work now you know how to use the // symbol! ")
+        path6=input("To go back to the Numeric Operations menu type 1, to return to the main menu type 2. ")
+        if (path6=="1"):
+            numericOps()
+        else:
+            (path6=="2")
+            menu()
+    else:
+        print("I'm sorry that is wrong")
+        floorDivide()
+
+#Function explains the ** symbol
+def exponent():
+    print("The ** symbol means multiplication it can multiply numbers, strings, assignments, etc. ")
+    exNum= int(input("Please select a number "))
+    exAnswer= int(exNum ** 3) #** raises the number by 3
+    print("Now take that number", exNum, "and ** (exponent or raise) it by 3", end=". ") #end= puts a period and a space at the end of the sentence
+    exChoice= int(input("What is the answer"))
+    if (exChoice==exAnswer):
+        print("Excellent work now you know how to use the ** symbol! ")
+        path7=input("To go back to the Numeric Operations menu type 1, to return to the main menu type 2. ")
+        if (path7=="1"):
+            numericOps()
+        else:
+            (path7=="2")
+            menu()
+    else:
+        print("I'm sorry that is wrong")
+        exponent()
+
+#Function explains the % symbol
+def modulus():
+    print("The % symbol means modulus it will give you the remainder of a division problem. ")
+    divNum= int(12)
+    divAnswer= int(divNum % 5) #% shows the remainder of the division problem
+    print("For this example our number will be 12 now by doing 12 % 5 it will divide the two numbers and print the remainder.  Please get the remainder from this problem. ")
+    divChoice= int(input("What is the answer"))
+    if (divChoice==divAnswer):
+        print("Excellent work now you know how to use the % symbol! ")
+        path5=input("To go back to the Numeric Operations menu type 1, to return to the main menu type 2. ")
+        if (path5== "1"):
+            numericOps()
+        else:
+            (path5== "2")
+            menu()
+    else:
+        print("I'm sorry that is wrong")
+        modulus()
+
+def tandf():
+    print("You chose to learn about True and False operators aka and, or, and not")
+    tandf1=input("To learn about And type 1, to learn about Or type 2, to learn about Not type 3")
+    if (tandf1=="1"):
+        andop()
+    elif (tandf1=="2"):
+        orop()
+    elif (tandf1=="3"):
+        notop()
+    else:
+        print("Please type 1,2,3")
+        tandf()
+
+    
+
+#Function is menu for loops
+def loops():
+    loopChoice=input("You have chosen to learn about loops.  To learn about while loops type 1, to learn about for loops type 2, to return to the menu type 3 ")
+    if (loopChoice=="1"):
+        whileLoops()
+    if (loopChoice=="2"):
+        forLoops()
+    if (loopChoice=="3"):
+        menu()
+
+#Function explains for loops
+def forLoops():
+    print("For loops are just like while loops.  They serve as a way to loop certain codes so that you don't have to reuse the same lines. ")
+    print("One of the biggest advantages to using for loops is that it goes really well with the range() function with allows you to set the loop x amount of times. ")
+    print("for x in range(0,?):")
+    print("     print(L)")
+    print("     x+=1")
+    x=input("How many times would the range function be set to print 4 L's? ")
+    if (x=="3"):
+        for x in range(0,4):
+            print("L")
+            x+=1
+        print("Correct you now know how to use for loops!")
+        loopChoice2=input("To return to the loops menu type 1, to see while loops type 2, to return to main menu type 3! ")
+        if (loopChoice2=="1"):
+            loops()
+        elif (loopChoice2=="2"):
+            whileLoops()
+        elif (loopChoice2=="3"):
+            menu()
+        else:
+            print("Please choose between 1,2,3" )
+            loopChoice2=input("To return to the loops menu type 1, to see while loops type 2, to return to main menu type 3! ")
+    else:
+        print("I'm sorry that is wrong please try again")
+        forLoops()
+
+def whileLoops():
+    print("While loops are exactly like for loops, it's mostly for preference.  One of the better things about while loops is that they are easier to write in my opinion. ")
+    print("When using while loops you set the variable to be over, equal, or less then a certain number and while the statement is true the loop continues. ")
+    print("For example if while loop is set to (x>0) then the loop would run while the variable x is greatern than 0. ")
+    print("while (x<=5:")
+    print("     print(L)")
+    print("     x+=1")
+    x2=input("How many times will this while loop run if x=0 ")
+    if (x2=="6"):
+        x=0
+        while (x<=5):
+            print("L")
+            x+=1
+        print("Congratulations you now know how to use while loops. ")
+        loopChoice3=input("To learn about for loops type 1, to return to the loops menu type 2, to return to the main menu type 3. ")
+        if (loopChoice3=="1"):
+            forLoops()
+        elif (loopChoice3=="2"):
+            loops()
+        elif (loopChoice3=="3"):
+            menu()
+        else:
+            print("Please choose between 1,2,3" )
+            loopChoice3=input("To learn about for loops type 1, to return to the loops menu type 2, to return to the main menu type 3. ")
+    else:
+        print("I'm sorry that is wrong please try again")
+        whileLoops()
+        
+    
+
+
+menu()
+numericOps()
+addition()
+subtraction()
+multiply()
+divide()
+floorDivide()
+exponent()
+modulus()
+stringMul()
+stringAdd()
+loops()
+forLoops()
+whileLoops()
+tanf()
+andop()
+orop()
+notop()
+
+
+
+    
