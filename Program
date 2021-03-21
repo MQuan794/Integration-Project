@@ -26,7 +26,7 @@ def menu():
     elif (choice=="5"):
         exit()
     if (choice != "1") or (choice != "2") or (choice != "3") or (choice != "4") or (choice != "5"):
-        print("Please choose 1 or 2 or 3 or 4 or 5")
+        print("Please choose 1,2,3,4,5")
         menu()
         
 #Function allows users to navigate string operations        
@@ -76,7 +76,7 @@ def stringAdd():
         print("I'm sorry that is wrong")
         stringAdd()        
 
-#Fucntion allows users to navigate operations
+#Function allows users to navigate operations
 def numericOps():
     print("Numeric operations are fairly simple, for this topic these are used just like normal everday math signs ")
     print("Numeric Operations include the following; +,-,*,**,%,/,// ")
@@ -96,7 +96,6 @@ def numericOps():
     elif (lesson == "%"):
         modulus()
     else:
-        (lesson != "+") or (lesson != "-") or (lesson != "*") or (lesson != "**") or (lesson != "%") or (lesson != "/") or (lesson != "//")
         print("Error going back, please select from the list!")
         numericOps()
           
@@ -232,22 +231,23 @@ def modulus():
     else:
         print("I'm sorry that is wrong")
         modulus()
-
+       
+#Function is a menu for Boolean Operators
 def tandf():
     print("You chose to learn about True and False operators aka and, or, and not")
-    tandf1=input("To learn about And type 1, to learn about Or type 2, to learn about Not type 3")
+    tandf1=input("To learn about And type 1, to learn about Or type 2, to learn about Not type 3, to return to the main menu type 4 ")
     if (tandf1=="1"):
         andop()
     elif (tandf1=="2"):
         orop()
     elif (tandf1=="3"):
         notop()
+    elif (tandf1=="4"):
+        menu()
     else:
-        print("Please type 1,2,3")
+        print("Please type 1,2,3,4")
         tandf()
-
     
-
 #Function is menu for loops
 def loops():
     loopChoice=input("You have chosen to learn about loops.  To learn about while loops type 1, to learn about for loops type 2, to return to the menu type 3 ")
@@ -285,10 +285,11 @@ def forLoops():
         print("I'm sorry that is wrong please try again")
         forLoops()
 
+#Function explains While Loops
 def whileLoops():
     print("While loops are exactly like for loops, it's mostly for preference.  One of the better things about while loops is that they are easier to write in my opinion. ")
     print("When using while loops you set the variable to be over, equal, or less then a certain number and while the statement is true the loop continues. ")
-    print("For example if while loop is set to (x>0) then the loop would run while the variable x is greatern than 0. ")
+    print("For example if while loop is set to (x>0) then the loop would run while the variable x is greater than 0. ")
     print("while (x<=5:")
     print("     print(L)")
     print("     x+=1")
@@ -312,9 +313,86 @@ def whileLoops():
     else:
         print("I'm sorry that is wrong please try again")
         whileLoops()
-        
-    
 
+#Function explains the And Boolean Operator
+def andop():
+    print("Lot of information here.  The and operator is used for True and False and compares two statements.  Let's simplify it. ")
+    print("1:f 2:t = False")
+    print("1:t 2:f = False")
+    print("1:t 2:t = True")
+    print("1:f 2:f = False")
+    tandf2=input("What would be the outcome if the first statement was true and the second statement was false, type t or f,")
+    if (tandf2=="f") or (tandf2=="f"):
+        x=5
+        print((x==5) and (x>10))
+        print("Great job now you know how to use the and operator")
+        tandf3=input("To learn about Or type 1, to learn about not type 2, to return to the boolean menu type 3, to return to the menu type 4. ")
+        if (tandf3=="1"):
+            orop()
+        elif (tandf3=="2"):
+            notop()
+        elif (tandf3=="3"):
+            tandf()
+        elif (tandf3=="4"):
+            menu()
+        else:
+            print("Please choose between 1 and 4" )
+            tandf3=input("To learn about Or type 1, to learn about not type 2, to return to the boolean menu type 3, to return to the menu type 4. ")
+    else:
+        print("I'm sorry that is wrong try again")
+        andop()
+
+#Function explains the Or Boolean Operator
+def orop():
+    print("Lot of information here.  The and operator Or is used for True and False and compares two statements.  Let's simplify it. ")
+    print("1:f 2:t = True")
+    print("1:t 2:f = True")
+    print("1:t 2:t = True")
+    print("1:f 2:f = False")
+    tandf4=input("What would be the outcome if the first statement was true and the second statement was false, type t or f,")
+    if (tandf4=="t") or (tandf4=="T"):
+        x=5
+        print((x==5) or (x>10))
+        print("Great job now you know how to use the or operator")
+        tandf5=input("To learn about And type 1, to learn about not type 2, to return to the boolean menu type 3, to return to the menu type 4. ")
+        if (tandf5=="1"):
+            andop()
+        elif (tandf5=="2"):
+            notop()
+        elif (tandf5=="3"):
+            tandf()
+        elif (tandf5=="4"):
+            menu()
+        else:
+            print("Please choose between 1 and 4" )
+            tandf5=input("To learn about And type 1, to learn about not type 2, to return to the boolean menu type 3, to return to the menu type 4. ")
+    else:
+        print("I'm sorry that is incorrect try again. ")
+        orop()
+
+#Function explains the Not Boolean Operator
+def notop():
+    print("The Not operator is simple, it just prints the opposite of the boolean for an equation for example if something is false the not operator will make it True and vice versa.  Let's simplify it. ")
+    tandf6=input("What would be the outcome be if you typed not in front of something that was also not true.  Type t or f,")
+    if (tandf6=="t") or (tandf6=="T"):
+        x=5
+        print(not (x>10))
+        print("Great job now you know how to use the not operator")
+        tandf7=input("To learn about And type 1, to learn about Or type 2, to return to the boolean menu type 3, to return to the menu type 4. ")
+        if (tandf7=="1"):
+            andop()
+        elif (tandf7=="2"):
+            orop()
+        elif (tandf7=="3"):
+            tandf()
+        elif (tandf7=="4"):
+            menu()
+        else:
+            print("Please choose between 1 and 4" )
+            tandf7=input("To learn about And type 1, to learn about Or type 2, to return to the boolean menu type 3, to return to the menu type 4. ")
+    else:
+        print("I'm sorry that is incorrect try again. ")
+        notop()
 
 menu()
 numericOps()
